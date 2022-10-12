@@ -234,18 +234,18 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
 
   ///list of months , en
   List<dynamic> listMonths_en = [
-    {"id": 1, "value": "January"},
-    {"id": 2, "value": "February"},
-    {"id": 3, "value": "March"},
-    {"id": 4, "value": "April"},
-    {"id": 5, "value": "May"},
-    {"id": 6, "value": "June"},
-    {"id": 7, "value": "July"},
-    {"id": 8, "value": "August"},
-    {"id": 9, "value": "September"},
-    {"id": 10, "value": "October"},
-    {"id": 11, "value": "November"},
-    {"id": 12, "value": "December"}
+    {"id": 1, "value": "1"},
+    {"id": 2, "value": "2"},
+    {"id": 3, "value": "3"},
+    {"id": 4, "value": "4"},
+    {"id": 5, "value": "5"},
+    {"id": 6, "value": "6"},
+    {"id": 7, "value": "7"},
+    {"id": 8, "value": "8"},
+    {"id": 9, "value": "9"},
+    {"id": 10, "value": "10"},
+    {"id": 11, "value": "11"},
+    {"id": 12, "value": "12"}
   ];
 
   ///list of months , zh_CN
@@ -289,6 +289,25 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        if (widget.showDay) w(widget.width),
+        if (widget.showYear)
+          Expanded(
+            flex: widget.yearFlex,
+            child: Container(
+              decoration: widget.boxDecoration ?? const BoxDecoration(),
+              child: SizedBox(
+                // height: 49,
+                child: ButtonTheme(
+                  alignedDropdown: true,
+                  child: widget.isDropdownHideUnderline
+                      ? DropdownButtonHideUnderline(
+                          child: yearDropdown(),
+                        )
+                      : yearDropdown(),
+                ),
+              ),
+            ),
+          ),
         if (widget.showMonth)
           Expanded(
             flex: widget.monthFlex,
@@ -323,25 +342,6 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
                       )
                     : dayDropdown(),
               )),
-            ),
-          ),
-        if (widget.showDay) w(widget.width),
-        if (widget.showYear)
-          Expanded(
-            flex: widget.yearFlex,
-            child: Container(
-              decoration: widget.boxDecoration ?? const BoxDecoration(),
-              child: SizedBox(
-                // height: 49,
-                child: ButtonTheme(
-                  alignedDropdown: true,
-                  child: widget.isDropdownHideUnderline
-                      ? DropdownButtonHideUnderline(
-                          child: yearDropdown(),
-                        )
-                      : yearDropdown(),
-                ),
-              ),
             ),
           ),
       ],
