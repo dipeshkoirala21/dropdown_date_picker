@@ -88,7 +88,7 @@ class DropdownDatePicker extends StatefulWidget {
   ///
   /// default `en`
   ///
-  /// support `zh_CN`
+  /// support `ja`
   ///
   /// support `it_IT`
   final String locale;
@@ -139,7 +139,7 @@ class DropdownDatePicker extends StatefulWidget {
       this.monthFlex = 2,
       this.dayFlex = 1,
       this.yearFlex = 2})
-      : assert(["en", "zh_CN", "it_IT"].contains(locale)),
+      : assert(["en", "ja", "it_IT"].contains(locale)),
         super(key: key);
 
   @override
@@ -172,8 +172,8 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             .reversed
             .toList();
 
-    if (widget.locale == "zh_CN") {
-      listMonths = listMonths_zh_CN;
+    if (widget.locale == "ja") {
+      listMonths = listMonths_ja;
     } else if (widget.locale == "it_IT") {
       listMonths = listMonths_it_IT;
     } else {
@@ -248,8 +248,8 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
     {"id": 12, "value": "12"}
   ];
 
-  ///list of months , zh_CN
-  List<dynamic> listMonths_zh_CN = [
+  ///list of months , ja
+  List<dynamic> listMonths_ja = [
     {"id": 1, "value": "1月"},
     {"id": 2, "value": "2月"},
     {"id": 3, "value": "3月"},
@@ -355,7 +355,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             (widget.isDropdownHideUnderline ? removeUnderline() : null),
         isExpanded: widget.isExpanded,
         hint: Text(widget.hintMonth, style: widget.hintTextStyle),
-        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
+        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: monthselVal == '' ? null : monthselVal,
         onChanged: (value) {
           monthSelected(value);
