@@ -289,14 +289,13 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // if (widget.showDay) w(widget.width),
         if (widget.showYear)
           Expanded(
             flex: widget.yearFlex,
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
-              child: SizedBox(
-                height: 56,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 56),
                 child: ButtonTheme(
                   alignedDropdown: true,
                   child: widget.isDropdownHideUnderline
@@ -314,8 +313,8 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             flex: widget.monthFlex,
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
-              child: SizedBox(
-                height: 56,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 56),
                 child: ButtonTheme(
                   alignedDropdown: true,
                   child: widget.isDropdownHideUnderline
@@ -333,8 +332,8 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             flex: widget.dayFlex,
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
-              child: SizedBox(
-                  height: 56,
+              child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 56),
                   child: ButtonTheme(
                     alignedDropdown: true,
                     child: widget.isDropdownHideUnderline

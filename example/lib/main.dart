@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           child: Form(
         key: formKey,
-        autovalidateMode: _autovalidate,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
           children: [
             DropdownDatePicker(
@@ -61,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
               endYear: 2020, // optional
               width: 10, // optional
               // selectedDay: 14, // optional
-              selectedMonth: 10, // optional
-              selectedYear: 1993, // optional
+              // selectedMonth: 10, // optional
+              // selectedYear: 1993, // optional
               onChangedDay: (value) => print('onChangedDay: $value'),
               onChangedMonth: (value) => print('onChangedMonth: $value'),
               onChangedYear: (value) => print('onChangedYear: $value'),
