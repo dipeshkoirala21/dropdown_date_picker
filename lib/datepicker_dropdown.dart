@@ -289,7 +289,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (widget.showDay) w(widget.width),
+        // if (widget.showDay) w(widget.width),
         if (widget.showYear)
           Expanded(
             flex: widget.yearFlex,
@@ -308,6 +308,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
               ),
             ),
           ),
+        if (widget.showMonth) w(widget.width),
         if (widget.showMonth)
           Expanded(
             flex: widget.monthFlex,
@@ -326,7 +327,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
               ),
             ),
           ),
-        if (widget.showMonth) w(widget.width),
+        if (widget.showDay) w(widget.width),
         if (widget.showDay)
           Expanded(
             flex: widget.dayFlex,
@@ -396,7 +397,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             (widget.isDropdownHideUnderline ? removeUnderline() : null),
         hint: Text(widget.hintYear, style: widget.hintTextStyle),
         isExpanded: widget.isExpanded,
-        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
+        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: yearselVal == '' ? null : yearselVal,
         onChanged: (value) {
           yearsSelected(value);
@@ -430,7 +431,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             (widget.isDropdownHideUnderline ? removeUnderline() : null),
         hint: Text(widget.hintDay, style: widget.hintTextStyle),
         isExpanded: widget.isExpanded,
-        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
+        icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: dayselVal == '' ? null : dayselVal,
         onChanged: (value) {
           daysSelected(value);
