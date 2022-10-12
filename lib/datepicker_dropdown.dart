@@ -296,7 +296,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
               child: SizedBox(
-                // height: 49,
+                height: 56,
                 child: ButtonTheme(
                   alignedDropdown: true,
                   child: widget.isDropdownHideUnderline
@@ -315,7 +315,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
               child: SizedBox(
-                // height: 49,
+                height: 56,
                 child: ButtonTheme(
                   alignedDropdown: true,
                   child: widget.isDropdownHideUnderline
@@ -334,15 +334,15 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             child: Container(
               decoration: widget.boxDecoration ?? const BoxDecoration(),
               child: SizedBox(
-                  // height: 49,
+                  height: 56,
                   child: ButtonTheme(
-                alignedDropdown: true,
-                child: widget.isDropdownHideUnderline
-                    ? DropdownButtonHideUnderline(
-                        child: dayDropdown(),
-                      )
-                    : dayDropdown(),
-              )),
+                    alignedDropdown: true,
+                    child: widget.isDropdownHideUnderline
+                        ? DropdownButtonHideUnderline(
+                            child: dayDropdown(),
+                          )
+                        : dayDropdown(),
+                  )),
             ),
           ),
       ],
