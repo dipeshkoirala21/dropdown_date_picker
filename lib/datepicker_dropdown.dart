@@ -282,6 +282,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
 
   ///update function
   update() {
+    print('object');
     setState(() {});
   }
 
@@ -357,6 +358,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
         hint: Text(widget.hintMonth, style: widget.hintTextStyle),
         icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: monthselVal == '' ? null : monthselVal,
+        menuMaxHeight: 400,
         onChanged: (value) {
           monthSelected(value);
         },
@@ -398,6 +400,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
         isExpanded: widget.isExpanded,
         icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: yearselVal == '' ? null : yearselVal,
+        menuMaxHeight: 400,
         onChanged: (value) {
           yearsSelected(value);
         },
@@ -432,6 +435,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
         isExpanded: widget.isExpanded,
         icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.white),
         value: dayselVal == '' ? null : dayselVal,
+        menuMaxHeight: 400,
         onChanged: (value) {
           daysSelected(value);
         },
